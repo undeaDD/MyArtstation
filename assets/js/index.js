@@ -69,10 +69,10 @@ leadsRef.on('value', function(snapshot) {
 					if (counter0 % 6 === 0) {
 						counter0 = 0;
 						id0 += 1;
-						var temp = '<div id="row0-' + id0 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></div>';
+						var temp = '<div id="row0-' + id0 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <a href="assets/html/album.html"><div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></a></div>';
 						document.getElementById("wrapperDigital").insertAdjacentHTML("beforeend", temp);
 					} else {
-						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div>';
+						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <a href="assets/html/album.html"><div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </a></div>';
 						document.getElementById("row0-" + id0).insertAdjacentHTML("beforeend", temp);
 					}
 					counter0 += 1;
@@ -82,10 +82,10 @@ leadsRef.on('value', function(snapshot) {
 					if (counter1 % 6 === 0) {
 						counter1 = 0;
 						id1 += 1;
-						var temp = '<div id="row1-' + id1 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></div>';
+						var temp = '<div id="row1-' + id1 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <a href="assets/html/album.html"><div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></a></div>';
 						document.getElementById("wrapperTraditionell").insertAdjacentHTML("beforeend", temp);
 					} else {
-						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div>';
+						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <a href="assets/html/album.html"><div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </a></div>';
 						document.getElementById("row1-" + id1).insertAdjacentHTML("beforeend", temp);
 					}
 					counter1 += 1;
@@ -95,10 +95,10 @@ leadsRef.on('value', function(snapshot) {
 					if (counter2 % 6 === 0) {
 						counter2 = 0;
 						id2 += 1;
-						var temp = '<div id="row2-' + id2 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></div>';
+						var temp = '<div id="row2-' + id2 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <a href="assets/html/album.html"><div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></a></div>';
 						document.getElementById("wrapperSonstiges").insertAdjacentHTML("beforeend", temp);
 					} else {
-						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div>';
+						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <a href="assets/html/album.html"><div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </a></div>';
 						document.getElementById("row2-" + id1).insertAdjacentHTML("beforeend", temp);
 					}
 					counter2 += 1;
