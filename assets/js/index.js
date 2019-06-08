@@ -10,19 +10,14 @@ var firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);		
 firebase.auth().onAuthStateChanged(function(user) {
-	if(user){
-		document.getElementById('loginBtn').value = "Logout";
-		document.getElementById('loginField').style.display = "none";
-		document.getElementById('loginLabel').classList.add('d-lg-block');
-		document.getElementById('uploadBtn').style.display = "block";
-		document.getElementById('loginField').value = "";
+	document.getElementById('loginBtn').value =  user ? "Logout" : "Login";
+	document.getElementById('loginField').style.display = user ? "none" : "block";
+	document.getElementById('uploadBtn').style.display = user ? "block" : "none";
+	
+	if (user) {
 		document.getElementById("loginBtn").classList.add('btn-danger');
 		document.getElementById("loginBtn").classList.remove('btn-success');
-	}else{
-		document.getElementById('loginBtn').value = "Login";
-		document.getElementById('loginField').style.display = "block";
-		document.getElementById('loginLabel').classList.remove('d-lg-block');
-		document.getElementById('uploadBtn').style.display = "none";
+	} else {
 		document.getElementById("loginBtn").classList.remove('btn-danger');
 		document.getElementById("loginBtn").classList.add('btn-success');
 	}
@@ -55,20 +50,87 @@ document.getElementById('uploadBtn').addEventListener('click', function(event) {
 document.getElementById("yearLabel").innerHTML = new Date().getFullYear();
 var leadsRef = firebase.database().ref('projects');
 leadsRef.on('value', function(snapshot) {
+	var debugCounter = 0;
+	var global0 = 0;
+	var global1 = 0;
+	var global2 = 0;
+	var counter0 = 0;
+	var counter1 = 0;
+	var counter2 = 0;
+	var id0 = 0;
+	var id1 = 0;
+	var id2 = 0;
+	
 	snapshot.forEach(function(childSnapshot) {
+		debugCounter += 1;
 		if(childSnapshot.val()["visible"]) {
-			console.log(childSnapshot.val()["title"]);
+			switch (childSnapshot.val()["type"]) {
+				case 0:
+					if (counter0 % 6 === 0) {
+						counter0 = 0;
+						id0 += 1;
+						var temp = '<div id="row0-' + id0 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></div>';
+						document.getElementById("wrapperDigital").insertAdjacentHTML("beforeend", temp);
+					} else {
+						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div>';
+						document.getElementById("row0-" + id0).insertAdjacentHTML("beforeend", temp);
+					}
+					counter0 += 1;
+					global0 +=1;
+					break;
+				case 1:
+					if (counter1 % 6 === 0) {
+						counter1 = 0;
+						id1 += 1;
+						var temp = '<div id="row1-' + id1 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></div>';
+						document.getElementById("wrapperTraditionell").insertAdjacentHTML("beforeend", temp);
+					} else {
+						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div>';
+						document.getElementById("row1-" + id1).insertAdjacentHTML("beforeend", temp);
+					}
+					counter1 += 1;
+					global1 +=1;
+					break;
+				case 2:
+					if (counter2 % 6 === 0) {
+						counter2 = 0;
+						id2 += 1;
+						var temp = '<div id="row2-' + id2 + '" class="row no-gutters"><div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div></div>';
+						document.getElementById("wrapperSonstiges").insertAdjacentHTML("beforeend", temp);
+					} else {
+						var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"> <div class="card"> <img src="https://picsum.photos/500/500?random=' + debugCounter + '" class="card-img-top"> </div> </div>';
+						document.getElementById("row2-" + id1).insertAdjacentHTML("beforeend", temp);
+					}
+					counter2 += 1;
+					global2 +=1;
+					break;
+				default:
+					break;
+			}
 		}
 	});
+	
+	document.getElementById("global0").innerHTML = global0;
+	for (counter0; counter0 < 6; counter0 += 1) {
+		var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"></div>';
+		document.getElementById("row0-" + id0).insertAdjacentHTML("beforeend", temp);
+	}
+	document.getElementById("global1").innerHTML = global1;
+	for (counter1; counter1 < 6; counter1 += 1) {
+		var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"></div>';
+		document.getElementById("row1-" + id1).insertAdjacentHTML("beforeend", temp);
+	}
+	document.getElementById("global2").innerHTML = global2;
+	for (counter1; counter2 < 6; counter2 += 1) {
+		var temp = '<div class="col-sm-12 col-md-6 col-lg col-xs-12"></div>';
+		document.getElementById("row2-" + id2).insertAdjacentHTML("beforeend", temp);
+	}
 });
 
 window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		document.getElementById("scrollToTop").style.display = "block";
-	} else {
-		document.getElementById("scrollToTop").style.display = "none";
-	}
+	var toggle = (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20);
+	document.getElementById("scrollToTop").style.display = toggle ? "block" : "none";
 }
 
 document.getElementById('scrollToTop').addEventListener('click', function(event) {
@@ -110,4 +172,4 @@ document.getElementById('scrollToTop').addEventListener('click', function(event)
 				  <img src="https://via.placeholder.com/500" class="card-img-top">
 				</div>
 			</div>
-		</div>
+		</div>*/
