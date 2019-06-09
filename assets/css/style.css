@@ -18,14 +18,19 @@
 #scrollToTop {
 	display: none;
 	position: fixed;
-	bottom: 80px;
-	right: 30px;
+	bottom: 86px;
+	right: 16px;
 	z-index: 99;
 	padding: 15px;
 }
 
 .bg-dark {
 	background-color: #383438 !important;
+}
+
+.row {
+	margin-right: 0px !important;
+	margin-left: 0px !important;
 }
 
 .bg-black {
