@@ -24,6 +24,10 @@
 	padding: 15px;
 }
 
+.bg-dark {
+	background-color: #383438 !important;
+}
+
 .bg-black {
 	background-color: black !important;
 }
