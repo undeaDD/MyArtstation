@@ -5,7 +5,8 @@
 	<meta http-equiv="expires" content="0">
 	<meta http-equiv="Cache-Control" content="no-cache"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
 	<meta name="apple-mobile-web-app-status-bar-style" content="black">
 	<meta name="author" content="undeaD_D">
 	<meta name="robots" content="index,nofollow">
@@ -13,6 +14,8 @@
 	<meta name="keywords" content="Privat, Bilder, Gallerie, undeaD_D">
 	<meta name="description" content="Private kleine Bildergallerie">
 	<meta name="date" content="2019-06-05T20:37:45+0200">
+	<meta name="apple-mobile-web-app-title" content="MyArtstation">
+	<meta http-equiv="cleartype" content="on">
 
 	<link rel="icon" href="assets/img/logo.png">
 	<link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.0.0/firebase-ui-auth.css">
@@ -44,9 +47,10 @@
 		</button>
 
 		<div class="collapse navbar-collapse mr-auto" id="navbarTogglerDemo02">
-			<div class="navbar-nav ml-4 mr-md-auto mr-sm-4 my-sm-4 my-md-0">
+			<div class="navbar-nav ml-sm-0 ml-md-4 mr-md-auto mr-sm-0 my-sm-0 my-md-0">
 				<div class="btn-group" role="group" aria-label="Basic example">
 					<a class="btn text-light btn-secondary" href="#">Gallery</a>
+					<a class="btn text-light btn-secondary" href="assets/html/faq.html">FAQ</a>
 					<a class="btn text-light btn-secondary" href="assets/html/contact.html">About me</a>
 				</div>
 			</div>
@@ -57,31 +61,32 @@
 			</form>
 		</div>
 	</nav>
-
-	<div id="wrapperDigital">
-		<h3 id="digital" class="title text-light ml-2 mt-3 mb-3">Digital Art <span id="global0" class="badge badge-dark">6</span></h3>
-	</div>
-
-	<div id="wrapperTraditionell">
-		<h3 id="traditional" class="title text-light ml-2 mt-5 mb-3">Traditional Drawn Art <span id="global1" class="badge badge-dark">6</span></h3>
-	</div>
 	
-	<div id="wrapperSonstiges" style="padding-bottom: 70px;">
-		<h3 id="uncategorized" class="title text-light ml-2 mt-5 mb-3">Non Categorized Art <span id="global2" class="badge badge-dark">6</span></h3>
-	</div>
+	<div style="padding-bottom: 70px; height: 100%; width: 100%;">
+		<div id="wrapperDigital" style="display: none;">
+			<h3 id="digital" class="text-light ml-2 mt-3 mb-3">Digital Art: <span id="global0" class="badge badge-dark">6</span></h3>
+		</div>
 
+		<div id="wrapperTraditionell" style="display: none;">
+			<h3 id="traditional" class="text-light ml-2 mt-5 mb-3">Traditional Drawn Art: <span id="global1" class="badge badge-dark">6</span></h3>
+		</div>
+		
+		<div id="wrapperSonstiges" style="display: none;">
+			<h3 id="uncategorized" class="text-light ml-2 mt-5 mb-3">Non Categorized Art: <span id="global2" class="badge badge-dark">6</span></h3>
+		</div>
+	</div>
 	<button class="btn bg-dark text-light" style="padding: 3px;" id="scrollToTop">
 		<img src="https://img.icons8.com/doodle/96/000000/up.png" width="35px" height="35px"></img>
 	</button>
 	<footer class="page-footer fixed-bottom font-small bg-dark text-light">
 		<div class="footer-copyright text-center py-3">
-			<div class="row">
-				<div class="col-md-6 col-sm-12 d-md-block d-none mt-2">
+			<div class="row justify-content-between">
+				<div class="col-md-5 col-sm-12 d-md-block d-none mt-2">
 					Copyright &copy; <span id="yearLabel">2019</span> DeltaSiege.eu
 				</div>
-				<div class="col-md-5 col-sm-12 btn-group ml-0 mt-0" role="group" aria-label="Basic example">
-					<a class="btn btn-secondary" href="assets/html/datenschutz.html">Datenschutz</a>
-					<a class="btn btn-secondary" href="assets/html/impressum.html">Impressum</a>
+				<div class="col-md-5 col-sm-11 btn-group mt-0 mx-4" role="group" aria-label="Basic example">
+					<a class="btn btn-secondary px-0" href="assets/html/datenschutz.html">Datenschutz</a>
+					<a class="btn btn-secondary px-0" href="assets/html/impressum.html">Impressum</a>
 				</div>
 			</div>
 		</div>		
