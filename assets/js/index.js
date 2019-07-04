@@ -9,3 +9,7 @@ var firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+document.oncontextmenu = function () {
+	return false;
+};
