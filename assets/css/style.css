@@ -72,6 +72,9 @@ body {
 	border-radius: 8px;
 	border: 0px;
 }
+.nav-pills .nav-link {
+    border-radius: 8px;
+}
 .card-title {
 	font-weight: bold;
 	color: #f47b00;
