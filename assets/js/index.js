@@ -11,5 +11,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 document.oncontextmenu = function () {
-	return false;
+	return window.location.href.indexOf('http://127.0.0.1') == 0;
 };
+
+function redirect() {
+	if (confirm("Navigating to: inprnt.com")) {
+		window.location.href = "https://www.inprnt.com/";
+	}
+}
