@@ -28,7 +28,7 @@ try {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
 			if (window.location.href.includes("/cms_admin.html")) {
-				window.location.href = window.location.href.replace("cms_admin.html", "cms_contact.html");
+				window.location.href = window.location.href.replace("cms_admin.html", "cms_blog.html");
 			}
 			try {
 				document.getElementById("userAvatar").src = "assets/img/" + user.uid + ".png"

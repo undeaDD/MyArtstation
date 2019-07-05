@@ -19,28 +19,38 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 	<link rel="icon" href="assets/img/logo.png">
-	<title>Valo's Art - Blog</title>
+	<title>Valo's CMS - Blog</title>
 </head>
 
 <body class="bg-black">
 
-	<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-black-transparent shadow-lg">
+	<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-primary shadow-lg">
 		<a class="navbar-brand">
-			<img src="assets/img/logo.png" width="30" height="30">
+			<img id="userAvatar" class="rounded-circle" src="assets/img/user.png" width="30" height="30">
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Valo's Art</a>
+					<a class="nav-link disabled" href="cms_index.html">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="faq.html">FAQ</a>
+					<a class="nav-link disabled" href="cms_projects.html">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="cms_faq.html">FAQ</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Blog</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="contact.html">Contact</a>
+					<a class="nav-link" href="cms_contact.html">Contact</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Show Website</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="logout()">LogOut</a>
 				</li>
 			</ul>
 		</div>
@@ -51,33 +61,7 @@
 		<div class="row">
 			<div class="col">
 
-				<div class="card mb-4 bg-dark shadow">
-					<div class="card-body">
-						<h2 class="card-title">Post Title</h2>
-						<p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-							eirmod
-							tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-							accusam
-							et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-							Lorem ipsum
-							dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-							eirmod
-							tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et
-							accusam
-							et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est
-							Lorem ipsum
-							dolor sit amet.</p>
-					</div>
-					<div class="card-footer bg-black-transparent text-muted">
-						posted 01.01.2019 by UndeaD_D
-						<div class="float-right">
-							<span class="badge badge-success">blog</span>
-							<span class="badge badge-info">personal</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="card mb-4 bg-dark shadow">
+				<div class="card mb-26 bg-dark shadow">
 					<div class="card-body">
 						<h2 class="card-title">Post Title</h2>
 						<p class="card-text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -105,9 +89,38 @@
 
 			</div>
 			<div class="col-4">
-				<div class="card shadow" style="background-color: #292F33;">
-					<div class="card-body" id="TwitterBlogURL">
+				<div class="card mb-4 shadow" style="background-color: #292F33;">
+					<div class="card-body">
+						<h2 class="card-title mb-4">Edit Widget URL</h2>
+						<input type="text" class="form-control bg-black-transparent text-light mb-3" id="TwitterBlogURL"
+							placeholder="https://twitter.com/ValoArt">
+						<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block mb-3">Save
+							URL</button>
+					</div>
+				</div>
 
+				<div class="card mb-4 shadow" style="background-color: #292F33;">
+					<div class="card-body">
+						<h2 class="card-title mb-4">Edit Blog</h2>
+						<button type="button" class="btn btn-lg btn-primary btn-block mb-3">Create Post</button>
+						<div class="dropdown mb-3">
+							<button class="btn btn-lg btn-primary btn-block dropdown-toggle" type="button"
+								id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false">
+								Select Post
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="dropdown-item" href="#">Post Title</a>
+								<a class="dropdown-item" href="#">Post Title</a>
+								<a class="dropdown-item" href="#">Post Title</a>
+								<a class="dropdown-item" href="#">Post Title</a>
+								<a class="dropdown-item" href="#">Post Title</a>
+								<a class="dropdown-item" href="#">Post Title</a>
+								<a class="dropdown-item" href="#">Post Title</a>
+								<a class="dropdown-item" href="#">Post Title</a>
+							</div>
+						</div>
+						<button type="button" class="btn btn-lg btn-danger btn-block mb-3">Remove Post</button>
 					</div>
 				</div>
 			</div>
@@ -115,43 +128,23 @@
 		</div>
 	</div>
 
-	<footer class="page-footer font-small bg-black text-light justify-content-between" id="footer">
-		<div class="btn-group" role="group">
-			<a href="https://twitter.com/ValoArt" class="btn ml-2 text-light">
-				<i class="fab fa-lg fa-twitter"></i>
-			</a>
-			<a href="https://t.me/joinchat/AAAAAENCmSyD5tfnoC3E-w" class="btn ml-2 text-light">
-				<i class="fab fa-lg fa-telegram-plane"></i>
-			</a>
-			<a href="privacy.html" class="btn ml-2 text-light">Privacy Policy</a>
-		</div>
-		<div class="copyright py-3 mr-5">
-			© 2019 Copyright - Valo's Art
-			<a href="cms_admin.html" class="btn ml-2 text-light"><i class="fas fa-lg fa-sign-in-alt"></i></a>
-		</div>
-	</footer>
-
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 	<script src="assets/js/index.js"></script>
 
 	<script>
+		function saveInfo() {
+			firebase.database().ref('twitterURL').set(document.getElementById("TwitterBlogURL").value);
+		}
+
 		var ref = firebase.database().ref('twitterURL');
 		ref.on('value', function (snapshot) {
-			try {
-				document.getElementById("twitterScriptID").remove();
-			}catch(e) { }
-
-			document.getElementById("TwitterBlogURL").innerHTML = "<a class=\"twitter-timeline\" href=\"" + snapshot.val() + "\" data-theme=\"dark\" data-border-color=\"#292F33\" data-link-color=\"#ffffff\" data-chrome=\"noborders transparent nofooter noscrollbar\" data-dnt=\"true\" data-tweet-limit=\"2\"><\/a>";
-			var script = document.createElement('script');
-			script.id = "twitterScriptID"
-			script.src = "https://platform.twitter.com/widgets.js";
-    		document.getElementById("TwitterBlogURL").appendChild(script);
+			document.getElementById("TwitterBlogURL").value = snapshot.val();
 		});
 	</script>
-
 </body>
 
 </html>

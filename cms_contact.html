@@ -31,22 +31,25 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Website</a>
+					<a class="nav-link disabled" href="cms_index.html">Home</a>
 				</li>
-				<li class="divider-vertical"></li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="cms_index.html">Projects</a>
+					<a class="nav-link disabled" href="cms_projects.html">Projects</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link disabled" href="cms_faq.html">FAQ</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="cms_blog.html">Blog</a>
+					<a class="nav-link" href="cms_blog.html">Blog</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="cms_contact.html">Contact</a>
+					<a class="nav-link" href="#">Contact</a>
 				</li>
-				<li class="nav-item active">
+				<li class="divider-vertical"></li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Show Website</a>
+				</li>
+				<li class="nav-item">
 					<a class="nav-link" href="#" onclick="logout()">LogOut</a>
 				</li>
 			</ul>
@@ -56,7 +59,7 @@
 	<div class="container text-light">
 		<div class="card bg-dark">
 			<div class="card-body">
-				<h2 class="card-title mb-4">Informations</h2>
+				<h2 class="card-title mb-4">Edit Informations</h2>
 				<textarea class="form-control bg-black-transparent text-light mb-3" id="FB-Info" rows="15"></textarea>
 				<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block">Save</button>
 			</div>
