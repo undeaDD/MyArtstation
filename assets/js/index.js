@@ -17,14 +17,14 @@ document.oncontextmenu = function () {
 try {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
-			if (window.location.href.includes("/cms/admin.html")) {
-				window.location.href = window.location.href.replace("admin.html", "contact.html");
+			if (window.location.href.includes("/cms_admin.html")) {
+				window.location.href = window.location.href.replace("cms_admin.html", "cms_contact.html");
 			}
 		} else {
-			if (!window.location.href.includes("/cms/admin.html")) {
+			if (!window.location.href.includes("/cms_admin.html")) {
 				var base = window.location.href.split('/');
 				base.pop();
-				window.location.href = base.join("/") + "/admin.html";
+				window.location.href = base.join("/") + "/cms_admin.html";
 			}
 		}
 	});
