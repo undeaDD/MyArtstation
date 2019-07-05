@@ -56,23 +56,23 @@
 							<div class="form-group">
 								<label for="name">Name *</label>
 								<input type="text" id="name" class="form-control bg-black-transparent text-light"
-									placeholder="Max Mustermann" required>
+									placeholder="John Doe" required>
 							</div>
 							<div class="form-group  pt-3">
-								<label for="email">Email or Telegram ID *</label>
+								<label for="email">Email and or Telegram ID *</label>
 								<input type="text" id="email" class="form-control bg-black-transparent text-light"
-									placeholder="max@mail.com or @max" required>
+									placeholder="john.doe@example.com and or @johndoe" required>
 								<small id="emailHelp" class="form-text text-muted">I will never share your email or username with
 									anyone else.</small>
 							</div>
 							<div class="form-group  pt-3">
 								<label for="message">Message *</label>
-								<textarea id="message" class="form-control bg-black-transparent text-light" rows="10"
+								<textarea id="message" class="form-control bg-black-transparent text-light" maxlength="200" placeholder="max 200 characters" rows="10"
 									required></textarea>
 							</div>
-							<div class="mx-auto pt-3">
-								<label for="message">* required fields</label>
-								<button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+							<div class="mx-auto pt-2">
+									<small id="emailHelp" class="form-text text-muted mb-2">* required fields</small>
+								<button type="submit" class="btn btn-lg btn-primary btn-block"><i class="fas fa-lg fa-share"></i> Submit</button>
 							</div>
 						</form>
 					</div>
