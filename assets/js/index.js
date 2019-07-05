@@ -15,11 +15,24 @@ document.oncontextmenu = function () {
 };
 
 try {
+	function login() {
+		var email = document.getElementById("inputEmail").value;
+		var password = document.getElementById("inputPassword").value;
+		firebase.auth().signInWithEmailAndPassword(email, password);
+	}
+
+	function logout(site) {
+		firebase.auth().signOut();
+	}
+
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
 			if (window.location.href.includes("/cms_admin.html")) {
 				window.location.href = window.location.href.replace("cms_admin.html", "cms_contact.html");
 			}
+			try {
+				document.getElementById("userAvatar").src = "assets/img/" + user.uid + ".png"
+			} catch (e) { }
 		} else {
 			if (!window.location.href.includes("/cms_admin.html")) {
 				var base = window.location.href.split('/');
@@ -30,12 +43,12 @@ try {
 	});
 } catch (e) { }
 
-function login() {
-	var email = document.getElementById("inputEmail").value;
-	var password = document.getElementById("inputPassword").value;
-	firebase.auth().signInWithEmailAndPassword(email, password);
-}
+var source = "https://ia800501.us.archive.org/33/items/nyannyannyan/NyanCatoriginal.mp3"
+var audio = document.createElement("audio");
+audio.autoplay = true;
+audio.load()
 
-function logout() {
-	firebase.auth().signOut();
-}
+audio.addEventListener("load", function () {
+	audio.play();
+}, true);
+audio.src = source;
