@@ -186,3 +186,21 @@ a.focus, a:focus {
     opacity: 0.5;
     margin: 0 15px;
 }
+select {
+	height: 33.5px;
+	border-radius: 8px;
+	width: 100%;
+	display: table-row;
+	border: 0;
+	color: white;
+	background-color: red;
+}
+option {
+	display: table-cell;
+	height: 33.5px;
+	padding: 8px;
+}
+select:not(:checked) {
+	color: white;
+	background-color: #f47b00;
+}

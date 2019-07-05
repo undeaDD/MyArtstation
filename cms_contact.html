@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="d-none d-lg-block">
 
 <head>
 	<meta charset="utf-8">
@@ -57,11 +57,23 @@
 	</nav>
 
 	<div class="container text-light">
-		<div class="card bg-dark">
-			<div class="card-body">
-				<h2 class="card-title mb-4">Edit Informations</h2>
-				<textarea class="form-control bg-black-transparent text-light mb-3" id="FB-Info" rows="15"></textarea>
-				<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block">Save</button>
+		<div class="row">
+			<div class="col-4">
+				<div class="card bg-dark">
+					<div class="card-body">
+						<h2 class="card-title mb-4">Contact Form</h2>
+						<button type="button" onclick="toggle()" id="contactEnabled" class="btn btn-lg btn-primary btn-block">...</button>
+					</div>
+				</div>
+			</div>
+			<div class="col">
+				<div class="card bg-dark">
+					<div class="card-body">
+						<h2 class="card-title mb-4">Edit Informations</h2>
+						<textarea class="form-control bg-black-transparent text-light mb-3" id="FB-Info" rows="15"></textarea>
+						<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block">Save</button>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -81,6 +93,23 @@
 		var ref = firebase.database().ref('info');
 		ref.on('value', function (snapshot) {
 			document.getElementById("FB-Info").value = snapshot.val();
+		});
+
+		function toggle() {
+			firebase.database().ref('contactEnabled').set(document.getElementById("contactEnabled").innerText !== "Status: enabled");
+		}
+
+		var ref = firebase.database().ref('contactEnabled');
+		ref.on('value', function (snapshot) {
+			if (snapshot.val()) {
+				document.getElementById("contactEnabled").innerText = "Status: enabled"
+				document.getElementById("contactEnabled").classList.remove("btn-danger");
+				document.getElementById("contactEnabled").classList.add("btn-primary");
+			} else {
+				document.getElementById("contactEnabled").innerText = "Status: disabled"
+				document.getElementById("contactEnabled").classList.remove("btn-primary");
+				document.getElementById("contactEnabled").classList.add("btn-danger");
+			}
 		});
 	</script>
 </body>

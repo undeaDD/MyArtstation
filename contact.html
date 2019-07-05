@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="d-none d-lg-block">
 
 <head>
 	<meta charset="utf-8">
@@ -71,8 +71,8 @@
 									required></textarea>
 							</div>
 							<div class="mx-auto pt-2">
-									<small id="emailHelp" class="form-text text-muted mb-2">* required fields</small>
-								<button type="submit" class="btn btn-lg btn-primary btn-block"><i class="fas fa-lg fa-share"></i> Submit</button>
+								<small id="emailHelp" class="form-text text-muted mb-2">* required fields</small>
+								<button type="submit" id="contactEnabled" class="btn btn-lg btn-primary btn-block" disabled>...</button>
 							</div>
 						</form>
 					</div>
@@ -114,6 +114,21 @@
 		var ref = firebase.database().ref('info');
 		ref.on('value', function (snapshot) {
 			document.getElementById("FB-Info").innerHTML = "<h2 class=\"card-title mb-4\">Informations</h2>" + snapshot.val();
+		});
+
+		var ref = firebase.database().ref('contactEnabled');
+		ref.on('value', function (snapshot) {
+			if (snapshot.val()) {
+				document.getElementById("contactEnabled").innerHTML = "<i class=\"fas fa-lg fa-share\"></i> Submit";
+				document.getElementById("contactEnabled").classList.remove("btn-danger");
+				document.getElementById("contactEnabled").classList.add("btn-primary");
+				$('#contactEnabled').prop('disabled', false);
+			} else {
+				document.getElementById("contactEnabled").innerHTML = "<i class=\"fas fa-lg fa-minus-circle\"></i> Temporarily disabled";
+				document.getElementById("contactEnabled").classList.remove("btn-primary");
+				document.getElementById("contactEnabled").classList.add("btn-danger");
+				$('#contactEnabled').prop('disabled', true);
+			}
 		});
 	</script>
 </body>
