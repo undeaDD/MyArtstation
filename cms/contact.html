@@ -17,30 +17,30 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../assets/css/style.css" rel="stylesheet">
+	<link href="/../assets/css/style.css" rel="stylesheet">
 	<link rel="icon" href="../assets/img/logo.png">
 	<title>Valo's CMS - Contact</title>
 </head>
 
 <body class="bg-black">
 
-	<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-black-transparent shadow-lg">
-		<a class="navbar-brand">
-			<img src="../assets/img/logo.png" width="30" height="30">
-		</a>
+	<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-primary shadow-lg">
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">CMS/Projects</a>
+					<a class="nav-link disabled" href="index.html">Projects</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="faq.html">CMS/FAQ</a>
+					<a class="nav-link disabled" href="faq.html">FAQ</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="blog.html">CMS/Blog</a>
+					<a class="nav-link disabled" href="blog.html">Blog</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="contact.html">CMS/Contact</a>
+					<a class="nav-link" href="contact.html">Contact</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#" onclick="logout()">LogOut</a>
 				</li>
 			</ul>
 		</div>
@@ -56,28 +56,12 @@
 		</div>
 	</div>
 
-	<footer class="page-footer font-small bg-black text-light justify-content-between" id="footer">
-		<div class="btn-group" role="group">
-			<a href="https://twitter.com/ValoArt" class="btn ml-2 text-light">
-				<i class="fab fa-lg fa-twitter"></i>
-			</a>
-			<a href="https://t.me/joinchat/AAAAAENCmSyD5tfnoC3E-w" class="btn ml-2 text-light">
-				<i class="fab fa-lg fa-telegram-plane"></i>
-			</a>
-			<a href="privacy.html" class="btn ml-2 text-light">Privacy Policy</a>
-		</div>
-		<div class="copyright py-3 mr-5">
-			© 2019 Copyright - Valo's Art
-			<a href="cms/admin.html" class="btn ml-2 text-light"><i class="fas fa-lg fa-sign-in-alt"></i></a>
-		</div>
-	</footer>
-
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
-	<script src="../assets/js/index.js"></script>
+	<script src="/../assets/js/index.js"></script>
 
 	<script>
 		function saveInfo() {
