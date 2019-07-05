@@ -42,3 +42,16 @@ try {
 		}
 	});
 } catch (e) { }
+
+try {
+document.getElementById("ContactFormID").onsubmit = function(event){
+	event.preventDefault();
+	var base = "aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdDg3MDcyNDQ1NDpBQUc4Mkg0ZlpXa1pycVlnUlMzNmcwLUpUbHpNS3dFbk96WS9zZW5kTWVzc2FnZQ==";
+	var message = "<b>[Valo's Contact Request]</b>\n\n<b>Name:</b> " + document.getElementById("name").value + "\n<b>Mail:</b> " + document.getElementById("email").value + "\n\n<b>Message:</b>\n" + document.getElementById("message").value;
+	$.each(["20932747", "16489403"], function( index, id ) {
+		$.ajax({
+			url: encodeURI(atob(base) + "?chat_id=" + id + "&parse_mode=HTML&disable_web_page_preview=true&text=" + message)
+		});
+	});
+};
+} catch (e) { }

@@ -52,22 +52,22 @@
 				<div class="card bg-dark">
 					<div class="card-body">
 						<h2 class="card-title mb-4">Contact me</h2>
-						<form>
+						<form id="ContactFormID">
 							<div class="form-group">
 								<label for="name">Name *</label>
-								<input type="text" class="form-control bg-black-transparent text-light" id="name"
+								<input type="text" id="name" class="form-control bg-black-transparent text-light"
 									placeholder="Max Mustermann" required>
 							</div>
 							<div class="form-group  pt-3">
 								<label for="email">Email Address *</label>
-								<input type="email" class="form-control bg-black-transparent text-light" id="email"
+								<input type="email" id="email" class="form-control bg-black-transparent text-light"
 									placeholder="max.mustermann@mail.com" required>
 								<small id="emailHelp" class="form-text text-muted">I will never share your email with
 									anyone else.</small>
 							</div>
 							<div class="form-group  pt-3">
 								<label for="message">Message *</label>
-								<textarea class="form-control bg-black-transparent text-light" id="message" rows="15"
+								<textarea id="message" class="form-control bg-black-transparent text-light" rows="15"
 									required></textarea>
 							</div>
 							<div class="mx-auto pt-3">
@@ -104,7 +104,7 @@
 		</div>
 	</footer>
 
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
