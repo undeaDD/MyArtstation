@@ -18,13 +18,13 @@ try {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
 			if (window.location.href.includes("/cms/admin.html")) {
-				// if logged in but on admin page -> redirect to cms page
-				window.location.href = "/cms/contact.html";
+				window.location.href = window.location.href.replace("admin.html", "contact.html");
 			}
 		} else {
 			if (!window.location.href.includes("/cms/admin.html")) {
-				// if on any other cms page but not logged in -> redirect to admin page
-				window.location.href = "/cms/admin.html";
+				var base = window.location.href.split('/');
+				base.pop();
+				window.location.href = base.join("/") + "/admin.html";
 			}
 		}
 	});
