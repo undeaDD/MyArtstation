@@ -48,6 +48,10 @@
 
 	<div class="container-fluid text-light">
 
+			<div class="alert alert-light bg-dark text-light" style="display: none; border-radius: 8px;" id="sendMessage" role="alert">
+				Message send successfully.
+			</div>
+
 		<div class="row" style="height: 450px;">
 			<div class="col-2">
 				<a href="project.html?id=0">
@@ -183,6 +187,14 @@
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
 	<script src="assets/js/index.js"></script>
+
+	<script>
+		if (new URL(window.location.href).searchParams.get("sendMessage") !== null) {
+			$("#sendMessage").hide().delay(1000).fadeIn(200).delay(3500).fadeOut(1000, function() { 
+				window.history.replaceState(null, null, window.location.pathname);
+			});
+		}
+	</script>
 </body>
 
 </html>
