@@ -17,37 +17,43 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
-	<link rel="icon" href="assets/img/logo.png">
-	<title>Valo's Art - Project</title>
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link rel="icon" href="../assets/img/logo.png">
+	<title>Valo's CMS - Contact</title>
 </head>
 
 <body class="bg-black">
 
 	<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-black-transparent shadow-lg">
 		<a class="navbar-brand">
-			<img src="assets/img/logo.png" width="30" height="30">
+			<img src="../assets/img/logo.png" width="30" height="30">
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Valo's Art</a>
+					<a class="nav-link" href="index.html">CMS/Projects</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="faq.html">FAQ</a>
+					<a class="nav-link" href="faq.html">CMS/FAQ</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="blog.html">Blog</a>
+					<a class="nav-link" href="blog.html">CMS/Blog</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="contact.html">Contact</a>
+				<li class="nav-item active">
+					<a class="nav-link" href="contact.html">CMS/Contact</a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
-	<div class="container-fluid text-light">
-
+	<div class="container text-light">
+		<div class="card bg-dark">
+			<div class="card-body">
+				<h2 class="card-title mb-4">Informations</h2>
+				<textarea class="form-control bg-black-transparent text-light mb-3" id="FB-Info" rows="15"></textarea>
+				<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block">Save</button>
+			</div>
+		</div>
 	</div>
 
 	<footer class="page-footer font-small bg-black text-light justify-content-between" id="footer">
@@ -70,7 +76,19 @@
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
-	<script src="assets/js/index.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+	<script src="../assets/js/index.js"></script>
+
+	<script>
+		function saveInfo() {
+			firebase.database().ref('info').set(document.getElementById("FB-Info").value);
+		}
+
+		var ref = firebase.database().ref('info');
+		ref.on('value', function (snapshot) {
+			document.getElementById("FB-Info").value = snapshot.val();
+		});
+	</script>
 </body>
 
 </html>

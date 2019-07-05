@@ -177,3 +177,6 @@ a.focus, a:focus {
     text-decoration: none;
     box-shadow: none;
 }
+.clickable {
+	cursor: pointer;
+}

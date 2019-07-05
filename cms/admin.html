@@ -17,27 +17,28 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-	<link href="assets/css/style.css" rel="stylesheet">
-	<link rel="icon" href="assets/img/logo.png">
-	<title>Valo's Art - Admin</title>
+	<link href="../assets/css/style.css" rel="stylesheet">
+	<link rel="icon" href="../assets/img/logo.png">
+	<title>Valo's Art - CMS Login</title>
 </head>
 
 <body class="container signin-body text-center text-light">
 	<form class="form-signin">
-		<a href="index.html"><img class="mb-4" src="assets/img/logo.png" alt="" width="72" height="72"></a>
+		<a href="index.html"><img class="mb-4" src="../assets/img/logo.png" alt="" width="72" height="72"></a>
 		<h1 class="h3 mb-3 font-weight-normal">CMS Login</h1>
 		<input type="email" id="inputEmail" class="form-control bg-dark text-light" placeholder="Email" required
 			autofocus>
 		<input type="password" id="inputPassword" class="form-control bg-dark text-light" placeholder="Password"
 			required>
-		<button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-		<p class="mt-5 mb-3 text-muted">© 2019 Copyright - Valo's Art</p>
+		<button type="button" class="btn btn-lg btn-primary btn-block" onclick="login()">Sign in</button>
+		<p class=" mt-5 mb-3 text-muted">© 2019 Copyright - Valo's Art</p>
 	</form>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
-	<script src="assets/js/index.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
+	<script src="../assets/js/index.js"></script>
 
 </body>
 

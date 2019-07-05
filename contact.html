@@ -80,16 +80,9 @@
 			</div>
 			<div class="col-4">
 				<div class="card bg-dark">
-					<div class="card-body">
+					<div class="card-body" id="FB-Info">
 						<h2 class="card-title mb-4">Informations</h2>
-						<p>Musterstraße 1</p>
-						<p>000000 Musterstadt</p>
-						<p>Musterland</p>
-						<p>Email: max.mustermann@mail.de</p>
-						<p>Tel: 0123 456 78900</p>
-
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -107,15 +100,22 @@
 		</div>
 		<div class="copyright py-3 mr-5">
 			© 2019 Copyright - Valo's Art
-			<a href="admin.html" class="btn ml-2 text-light"><i class="fas fa-lg fa-sign-in-alt"></i></a>
+			<a href="cms/admin.html" class="btn ml-2 text-light"><i class="fas fa-lg fa-sign-in-alt"></i></a>
 		</div>
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
 	<script src="assets/js/index.js"></script>
+
+	<script>
+		var ref = firebase.database().ref('info');
+		ref.on('value', function (snapshot) {
+			document.getElementById("FB-Info").innerHTML = "<h2 class=\"card-title mb-4\">Informations</h2>" + snapshot.val();
+		});
+	</script>
 </body>
 
 </html>
