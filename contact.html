@@ -62,17 +62,19 @@
 								<label for="email">Email and or Telegram ID *</label>
 								<input type="text" id="email" class="form-control bg-black-transparent text-light"
 									placeholder="john.doe@example.com and or @johndoe" required>
-								<small id="emailHelp" class="form-text text-muted">I will never share your email or username with
+								<small id="emailHelp" class="form-text text-muted">I will never share your email or
+									username with
 									anyone else.</small>
 							</div>
 							<div class="form-group  pt-3">
 								<label for="message">Message *</label>
-								<textarea id="message" class="form-control bg-black-transparent text-light" maxlength="200" placeholder="max 200 characters" rows="10"
-									required></textarea>
+								<textarea id="message" class="form-control bg-black-transparent text-light"
+									maxlength="200" placeholder="max 200 characters" rows="10" required></textarea>
 							</div>
 							<div class="mx-auto pt-2">
 								<small id="emailHelp" class="form-text text-muted mb-2">* required fields</small>
-								<button type="submit" id="contactEnabled" class="btn btn-lg btn-primary btn-block" disabled>...</button>
+								<button type="submit" id="contactEnabled" class="btn btn-lg btn-primary btn-block"
+									disabled>...</button>
 							</div>
 						</form>
 					</div>
@@ -109,28 +111,6 @@
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
 	<script src="assets/js/index.js"></script>
-
-	<script>
-		var ref = firebase.database().ref('info');
-		ref.on('value', function (snapshot) {
-			document.getElementById("FB-Info").innerHTML = "<h2 class=\"card-title mb-4\">Informations</h2>" + snapshot.val();
-		});
-
-		var ref = firebase.database().ref('contactEnabled');
-		ref.on('value', function (snapshot) {
-			if (snapshot.val()) {
-				document.getElementById("contactEnabled").innerHTML = "<i class=\"fas fa-lg fa-share\"></i> Submit";
-				document.getElementById("contactEnabled").classList.remove("btn-danger");
-				document.getElementById("contactEnabled").classList.add("btn-primary");
-				$('#contactEnabled').prop('disabled', false);
-			} else {
-				document.getElementById("contactEnabled").innerHTML = "<i class=\"fas fa-lg fa-minus-circle\"></i> Temporarily disabled";
-				document.getElementById("contactEnabled").classList.remove("btn-primary");
-				document.getElementById("contactEnabled").classList.add("btn-danger");
-				$('#contactEnabled').prop('disabled', true);
-			}
-		});
-	</script>
 </body>
 
 </html>

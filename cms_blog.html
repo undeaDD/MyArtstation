@@ -37,7 +37,7 @@
 					<a class="nav-link disabled" href="cms_projects.html">Projects</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="cms_faq.html">FAQ</a>
+					<a class="nav-link" href="cms_faq.html">FAQ</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="#">Blog</a>
@@ -57,87 +57,31 @@
 	</nav>
 
 	<div class="container text-light">
-
 		<div class="row">
 			<div class="col">
-
-				<div class="card mb-26 bg-dark shadow">
-					<div class="card-body">
-						<h2 class="card-title mb-4">Edit Post</h2>
-						<input type="text" id="title" class="form-control bg-black-transparent text-light mb-3"
-							value="Post title">
-						<textarea id="message" class="form-control bg-black-transparent text-light mb-3"
-							rows="10">Lorem Ipsum</textarea>
-						<h5 class="card-title mt-4">Select Tags</h5>
-						<div class="btn-group btn-group-toggle" data-toggle="buttons" style="width: 100%;">
-							<label class="btn btn-dark active">
-								<input type="checkbox" name="options" id="option1" autocomplete="off" checked>blog
-							</label>
-							<label class="btn btn-dark">
-								<input type="checkbox" name="options" id="option2" autocomplete="off">personal
-							</label>
-							<label class="btn btn-dark">
-								<input type="checkbox" name="options" id="option3" autocomplete="off">warning
-							</label>
-							<label class="btn btn-dark">
-								<input type="checkbox" name="options" id="option4" autocomplete="off">telegram
-							</label>
-							<label class="btn btn-dark">
-								<input type="checkbox" name="options" id="option5" autocomplete="off">system
-							</label>
-							<label class="btn btn-dark">
-								<input type="checkbox" name="options" id="option5" autocomplete="off">update
-							</label>
-						</div>
-						<h5 class="card-title mt-4">Post Actions</h5>
-						<div class="row">
-							<div class="col">
-								<button type="button" class="btn btn-lg btn-primary btn-block">Save Post</button>
-							</div>
-							<div class="col">
-								<button type="button" class="btn btn-lg btn-danger btn-block">Remove Post</button>
-							</div>
-						</div>
-					</div>
-				</div>
-
-			</div>
-			<div class="col-4">
 				<div class="card mb-4 shadow" style="background-color: #292F33;">
 					<div class="card-body">
-						<h2 class="card-title mb-4">Edit Widget</h2>
+						<h2 class="card-title mb-4">Edit Widget <span class="text-muted">(url)</span></h2>
 						<input type="text" class="form-control bg-black-transparent text-light mb-3" id="TwitterBlogURL"
 							placeholder="https://twitter.com/ValoArt">
 						<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block mb-3">Save
-							URL</button>
-					</div>
-				</div>
-
-				<div class="card mb-4 shadow" style="background-color: #292F33;">
-					<div class="card-body">
-						<h2 class="card-title mb-4">Edit Blogs</h2>
-						<button type="button" class="btn btn-lg btn-primary btn-block mb-3">Create new Post</button>
-						<div class="dropdown">
-							<button class="btn btn-lg btn-dark btn-block dropdown-toggle" type="button"
-								id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-								aria-expanded="false">
-								Edit existing Post
-							</button>
-							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								<a class="dropdown-item" href="#">Post Title</a>
-								<a class="dropdown-item" href="#">Post Title</a>
-								<a class="dropdown-item" href="#">Post Title</a>
-								<a class="dropdown-item" href="#">Post Title</a>
-								<a class="dropdown-item" href="#">Post Title</a>
-								<a class="dropdown-item" href="#">Post Title</a>
-								<a class="dropdown-item" href="#">Post Title</a>
-								<a class="dropdown-item" href="#">Post Title</a>
-							</div>
-						</div>
+							Widget URL</button>
 					</div>
 				</div>
 			</div>
-
+		</div>
+		<div class="row">
+			<div class=" col">
+				<div class="card bg-dark">
+					<div class="card-body">
+						<h2 class="card-title mb-4">Edit Blog <span class="text-muted">(json)</span></h2>
+						<textarea class="form-control bg-black-transparent text-light mb-3" id="BlogID"
+							rows="100"></textarea>
+						<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block">Save
+							Blog</button>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -149,20 +93,6 @@
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 	<script src="assets/js/index.js"></script>
 
-	<script>
-		function saveInfo() {
-			firebase.database().ref('twitterURL').set(document.getElementById("TwitterBlogURL").value);
-		}
-
-		var ref = firebase.database().ref('twitterURL');
-		ref.on('value', function (snapshot) {
-			document.getElementById("TwitterBlogURL").value = snapshot.val();
-		});
-
-		$(document).ready(function () {
-			$('#pills').bootstrap_plugins('multiselect');
-		});
-	</script>
 </body>
 
 </html>

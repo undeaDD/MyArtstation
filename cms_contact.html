@@ -37,7 +37,7 @@
 					<a class="nav-link disabled" href="cms_projects.html">Projects</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link disabled" href="cms_faq.html">FAQ</a>
+					<a class="nav-link" href="cms_faq.html">FAQ</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="cms_blog.html">Blog</a>
@@ -62,16 +62,19 @@
 				<div class="card bg-dark">
 					<div class="card-body">
 						<h2 class="card-title mb-4">Contact Form</h2>
-						<button type="button" onclick="toggle()" id="contactEnabled" class="btn btn-lg btn-primary btn-block">...</button>
+						<button type="button" onclick="toggle()" id="contactEnabled"
+							class="btn btn-lg btn-primary btn-block">...</button>
 					</div>
 				</div>
 			</div>
-			<div class="col">
+			<div class=" col">
 				<div class="card bg-dark">
 					<div class="card-body">
-						<h2 class="card-title mb-4">Edit Informations</h2>
-						<textarea class="form-control bg-black-transparent text-light mb-3" id="FB-Info" rows="15"></textarea>
-						<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block">Save</button>
+						<h2 class="card-title mb-4">Edit Informations <span class="text-muted">(html code)</span></h2>
+						<textarea class="form-control bg-black-transparent text-light mb-3" id="FB-Info"
+							rows="15"></textarea>
+						<button type="button" onclick="saveInfo()"
+							class="btn btn-lg btn-primary btn-block">Save</button>
 					</div>
 				</div>
 			</div>
@@ -85,33 +88,6 @@
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 	<script src="assets/js/index.js"></script>
 
-	<script>
-		function saveInfo() {
-			firebase.database().ref('info').set(document.getElementById("FB-Info").value);
-		}
-
-		var ref = firebase.database().ref('info');
-		ref.on('value', function (snapshot) {
-			document.getElementById("FB-Info").value = snapshot.val();
-		});
-
-		function toggle() {
-			firebase.database().ref('contactEnabled').set(document.getElementById("contactEnabled").innerText !== "Status: enabled");
-		}
-
-		var ref = firebase.database().ref('contactEnabled');
-		ref.on('value', function (snapshot) {
-			if (snapshot.val()) {
-				document.getElementById("contactEnabled").innerText = "Status: enabled"
-				document.getElementById("contactEnabled").classList.remove("btn-danger");
-				document.getElementById("contactEnabled").classList.add("btn-primary");
-			} else {
-				document.getElementById("contactEnabled").innerText = "Status: disabled"
-				document.getElementById("contactEnabled").classList.remove("btn-primary");
-				document.getElementById("contactEnabled").classList.add("btn-danger");
-			}
-		});
-	</script>
 </body>
 
 </html>
