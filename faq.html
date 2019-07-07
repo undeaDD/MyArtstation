@@ -81,40 +81,6 @@
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
 	<script src="assets/js/index.js"></script>
 
-	<script>
-		firebase.database().ref('faq').on('value', function (snapshot) {
-			document.getElementById("faq-tabs").innerHTML = "";
-			document.getElementById("faq-tab-content").innerHTML = "";
-
-			for (const [index, post] of JSON.parse(snapshot.val()).entries()) {
-				document.getElementById("faq-tabs").innerHTML += `
-					<a href="#tab` + index + `" class="nav-link` + (index === 0 ? " active" : "") + `" data-toggle="pill" role="tab">
-							<i class="` + post["icon"] + `"></i> ` + post["title"] + `
-					</a>`;
-
-				var temp = `
-					<div class="tab-pane` + (index === 0 ? " show active" : "") + `" id="tab` + index + `" role="tabpanel">
-					<div class="accordion shadow" id="accordion-tab-` + index + `">`;
-
-				for (const [id, card] of post["content"].entries()) {
-					temp += `
-						<div class="card bg-dark text-light">
-							<div class="card-header clickable" id="accordion-tab-` + index + `-heading-` + id + `" data-toggle="collapse"
-								data-target="#accordion-tab-` + index + `-content-` + id + `">
-								<h5 class="btn btn-link">` + card["title"] + `</h5>
-							</div>
-							<div class="collapse` + (id === 0 ? " show" : "") + `" id="accordion-tab-` + index + `-content-` + id + `" data-parent="#accordion-tab-` + index + `">
-								<div class="card-body bg-black-transparent">` + card["body"] + `</div>
-							</div>
-						</div>
-					`;
-				}
-
-				document.getElementById("faq-tab-content").innerHTML += temp + "</div></div>";
-			}
-		});
-	</script>
-
 	<noscript>
 		<meta http-equiv="refresh" content="0.0;url=/nojs.html" />
 	</noscript>

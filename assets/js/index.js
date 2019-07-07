@@ -225,7 +225,7 @@ try {
 				document.getElementById("twitterScriptID").remove();
 			} catch (e) { }
 
-			document.getElementById("TwitterBlogURL").innerHTML = "<div class=\"card shadow mb-4\" style=\"background-color: #292F33;\"><div class=\"card-body\" ><h2 class=\"card-title mb-4\">Twitter Posts</h2><a class=\"twitter-timeline\" href=\"" + snapshot.val() + "\" data-theme=\"dark\" data-border-color=\"#292F33\" data-link-color=\"#ffffff\" data-chrome=\"noborders transparent nofooter noheader noscrollbar\" data-dnt=\"true\" data-tweet-limit=\"2\"><\/a></div></div>";
+			document.getElementById("TwitterBlogURL").innerHTML = "<div class=\"card shadow mb-4\" style=\"background-color: #292F33;\"><div class=\"card-body\" ><h2 class=\"card-title mb-4\">Twitter Posts</h2><a class=\"twitter-timeline\" href=\"" + snapshot.val() + "\" data-theme=\"dark\" data-dnt=\"true\" data-border-color=\"#292F33\" data-link-color=\"#ffffff\" data-chrome=\"noborders transparent nofooter noheader noscrollbar\" data-tweet-limit=\"2\" data-show-replies=\"false\"><\/a></div></div>";
 			var script = document.createElement('script');
 			script.id = "twitterScriptID"
 			script.src = "https://platform.twitter.com/widgets.js";
@@ -251,6 +251,42 @@ try {
 					</div>
 				</div>`;
 				document.getElementById("blogWrapper").innerHTML += data;
+			}
+		});
+	}
+} catch (e) { }
+
+try {
+	if (window.location.href.includes("/faq.html")) {
+		firebase.database().ref('faq').on('value', function (snapshot) {
+			document.getElementById("faq-tabs").innerHTML = "";
+			document.getElementById("faq-tab-content").innerHTML = "";
+
+			for (const [index, post] of JSON.parse(snapshot.val()).entries()) {
+				document.getElementById("faq-tabs").innerHTML += `
+					<a href="#tab` + index + `" class="nav-link` + (index === 0 ? " active" : "") + `" data-toggle="pill" role="tab">
+							<i class="` + post["icon"] + `"></i> ` + post["title"] + `
+					</a>`;
+
+				var temp = `
+					<div class="tab-pane` + (index === 0 ? " show active" : "") + `" id="tab` + index + `" role="tabpanel">
+					<div class="accordion shadow" id="accordion-tab-` + index + `">`;
+
+				for (const [id, card] of post["content"].entries()) {
+					temp += `
+						<div class="card bg-dark text-light">
+							<div class="card-header clickable" id="accordion-tab-` + index + `-heading-` + id + `" data-toggle="collapse"
+								data-target="#accordion-tab-` + index + `-content-` + id + `">
+								<h5 class="btn btn-link">` + card["title"] + `</h5>
+							</div>
+							<div class="collapse` + (id === 0 ? " show" : "") + `" id="accordion-tab-` + index + `-content-` + id + `" data-parent="#accordion-tab-` + index + `">
+								<div class="card-body bg-black-transparent">` + card["body"] + `</div>
+							</div>
+						</div>
+					`;
+				}
+
+				document.getElementById("faq-tab-content").innerHTML += temp + "</div></div>";
 			}
 		});
 	}
