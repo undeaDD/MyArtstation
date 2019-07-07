@@ -291,3 +291,11 @@ try {
 		});
 	}
 } catch (e) { }
+
+try {
+	if (!window.location.href.includes("html")) {
+		var base = window.location.href.split('/');
+		base.pop();
+		window.location.href = base.join("/") + "/index.html";
+	}
+} catch (e) { }
