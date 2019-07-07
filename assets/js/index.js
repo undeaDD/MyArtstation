@@ -1,3 +1,5 @@
+'use strict';
+
 var firebaseConfig = {
 	apiKey: "AIzaSyCil91Bgp3FeHFyCUdsvKb1cVqi64hGb0U",
 	authDomain: "private-photogallery.firebaseapp.com",
@@ -14,17 +16,21 @@ document.oncontextmenu = function () {
 	return window.location.href.indexOf('http://127.0.0.1') == 0;
 };
 
-try {
-	function login() {
+function login() {
+	try {
 		var email = document.getElementById("inputEmail").value;
 		var password = document.getElementById("inputPassword").value;
 		firebase.auth().signInWithEmailAndPassword(email, password);
-	}
+	} catch (e) { }
+}
 
-	function logout(site) {
+function logout(site) {
+	try {
 		firebase.auth().signOut();
-	}
+	} catch (e) { }
+}
 
+try {
 	firebase.auth().onAuthStateChanged(function (user) {
 		if (user) {
 			if (window.location.href.includes("/cms_admin.html")) {
@@ -104,19 +110,27 @@ try {
 	}
 } catch (e) { }
 
-try {
-	if (window.location.href.includes("/cms_blog.html")) {
-		function saveInfo() {
+function saveTwitter() {
+	try {
+		if (window.location.href.includes("/cms_blog.html")) {
 			firebase.database().ref('twitterURL').set(document.getElementById("TwitterBlogURL").value);
 		}
+	} catch (e) { }
+}
 
+function saveBlog() {
+	try {
+		if (window.location.href.includes("/cms_blog.html")) {
+			firebase.database().ref('blog').set(document.getElementById('BlogID').value);
+		}
+	} catch (e) { }
+}
+
+try {
+	if (window.location.href.includes("/cms_blog.html")) {
 		firebase.database().ref('twitterURL').on('value', function (snapshot) {
 			document.getElementById("TwitterBlogURL").value = snapshot.val();
 		});
-
-		function saveInfo() {
-			firebase.database().ref('blog').set(document.getElementById('BlogID').value);
-		}
 
 		firebase.database().ref('blog').on('value', function (snapshot) {
 			document.getElementById('BlogID').value = snapshot.val();
@@ -124,20 +138,28 @@ try {
 	}
 } catch (e) { }
 
-try {
-	if (window.location.href.includes("/cms_contact.html")) {
-		function saveInfo() {
+function saveInfo() {
+	try {
+		if (window.location.href.includes("/cms_contact.html")) {
 			firebase.database().ref('info').set(document.getElementById("FB-Info").value);
 		}
+	} catch (e) { }
+}
 
+function toggle() {
+	try {
+		if (window.location.href.includes("/cms_contact.html")) {
+			firebase.database().ref('contactEnabled').set(document.getElementById("contactEnabled").innerText !== "Status: enabled");
+		}
+	} catch (e) { }
+}
+
+try {
+	if (window.location.href.includes("/cms_contact.html")) {
 		var ref = firebase.database().ref('info');
 		ref.on('value', function (snapshot) {
 			document.getElementById("FB-Info").value = snapshot.val();
 		});
-
-		function toggle() {
-			firebase.database().ref('contactEnabled').set(document.getElementById("contactEnabled").innerText !== "Status: enabled");
-		}
 
 		var ref = firebase.database().ref('contactEnabled');
 		ref.on('value', function (snapshot) {
@@ -173,7 +195,7 @@ try {
 				document.getElementById("blogWrapper").innerHTML = "";
 			} catch (e) { }
 
-			for (post of JSON.parse(snapshot.val())) {
+			for (const post of JSON.parse(snapshot.val())) {
 				var data = `<div class="card mb-4 bg-dark shadow">
 					<div class="card-body">
 						<h2 class="card-title">` + post["title"] + `</h2>
@@ -193,8 +215,10 @@ try {
 } catch (e) { }
 
 function checkEnter(event) {
-	if (event.keyCode === 13) {
-		event.preventDefault();
-		document.getElementById("loginBtn").click();
-	}
+	try {
+		if (event.keyCode === 13) {
+			event.preventDefault();
+			document.getElementById("loginBtn").click();
+		}
+	} catch (e) { }
 }

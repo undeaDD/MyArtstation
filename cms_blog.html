@@ -64,7 +64,7 @@
 						<h2 class="card-title mb-4">Edit Widget <span class="text-muted">(url)</span></h2>
 						<input type="text" class="form-control bg-black-transparent text-light mb-3" id="TwitterBlogURL"
 							placeholder="https://twitter.com/ValoArt">
-						<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block mb-3">Save
+						<button type="button" onclick="saveTwitter()" class="btn btn-lg btn-primary btn-block mb-3">Save
 							Widget URL</button>
 					</div>
 				</div>
@@ -76,8 +76,8 @@
 					<div class="card-body">
 						<h2 class="card-title mb-4">Edit Blog <span class="text-muted">(json)</span></h2>
 						<textarea class="form-control bg-black-transparent text-light mb-3" id="BlogID"
-							rows="100"></textarea>
-						<button type="button" onclick="saveInfo()" class="btn btn-lg btn-primary btn-block">Save
+							rows="25"></textarea>
+						<button type="button" onclick="saveBlog()" class="btn btn-lg btn-primary btn-block">Save
 							Blog</button>
 					</div>
 				</div>
@@ -93,6 +93,9 @@
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 	<script src="assets/js/index.js"></script>
 
+	<noscript>
+		<meta http-equiv="refresh" content="0.0;url=/nojs.html" />
+	</noscript>
 </body>
 
 </html>
