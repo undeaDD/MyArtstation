@@ -1,0 +1,16 @@
+{
+    "name": "Valo's Art",
+    "short_name": "Valo's Art",
+    "lang": "de-DE",
+    "start_url": "https://undeadd.github.io/MyArtstation/index.html",
+    "scope": "/MyArtstation/",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "https://undeadd.github.io/MyArtstation/assets/img/appIcon.png",
+            "sizes": "144x144",
+            "type": "iamge/png"
+        }
+    ]
+}
