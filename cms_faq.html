@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="d-none d-lg-block">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -24,17 +24,14 @@
 
 <body class="bg-black">
 
-	<nav class="navbar navbar-expand-md sticky-top navbar-dark bg-primary shadow-lg">
-		<a class="navbar-brand">
+	<nav class="navbar navbar-expand sticky-top navbar-dark bg-black-transparent shadow-lg">
+		<a class="navbar-brand d-none d-sm-block">
 			<img id="userAvatar" class="rounded-circle" src="assets/img/user.png" width="30" height="30">
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link disabled" href="cms_index.html">Home</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" href="cms_projects.html">Projects</a>
+					<a class="nav-link" href="cms_index.html">Home</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="#">FAQ</a>
@@ -46,6 +43,9 @@
 					<a class="nav-link" href="cms_contact.html">Contact</a>
 				</li>
 				<li class="divider-vertical"></li>
+				<li class="nav-item">
+					<a class="nav-link disabled" href="cms_stats.html">Statistics</a>
+				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="index.html">Show Website</a>
 				</li>
@@ -64,8 +64,8 @@
 						<h2 class="card-title mb-4">Edit FAQ <span class="text-muted">(json)</span></h2>
 						<textarea class="form-control bg-black-transparent text-light mb-3" id="FAQID"
 							rows="40"></textarea>
-						<button type="button" onclick="saveInfo()"
-							class="btn btn-lg btn-primary btn-block">Save</button>
+						<button type="button" onclick="saveFAQ()" class="btn btn-lg btn-primary btn-block">Save
+							FAQ</button>
 					</div>
 				</div>
 			</div>

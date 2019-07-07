@@ -19,7 +19,7 @@
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="assets/css/style.css" rel="stylesheet">
 	<link rel="icon" href="assets/img/logo.png">
-	<title>Valo's CMS - Blog</title>
+	<title>Valo's CMS - Home</title>
 </head>
 
 <body class="bg-black">
@@ -30,14 +30,14 @@
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-					<a class="nav-link" href="cms_index.html">Home</a>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Home</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="cms_faq.html">FAQ</a>
 				</li>
-				<li class="nav-item active">
-					<a class="nav-link" href="#">Blog</a>
+				<li class="nav-item">
+					<a class="nav-link" href="cms_blog.html">Blog</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="cms_contact.html">Contact</a>
@@ -58,27 +58,14 @@
 
 	<div class="container text-light">
 		<div class="row">
-			<div class="col">
-				<div class="card mb-4 shadow" style="background-color: #292F33;">
-					<div class="card-body">
-						<h2 class="card-title mb-4">Edit Widget <span class="text-muted">(url)</span></h2>
-						<input type="text" class="form-control bg-black-transparent text-light mb-3" id="TwitterBlogURL"
-							placeholder="https://twitter.com/ValoArt">
-						<button type="button" onclick="saveTwitter()" class="btn btn-lg btn-primary btn-block mb-3">Save
-							Widget URL</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="row">
 			<div class=" col">
 				<div class="card bg-dark">
 					<div class="card-body">
-						<h2 class="card-title mb-4">Edit Blog <span class="text-muted">(json)</span></h2>
-						<textarea class="form-control bg-black-transparent text-light mb-3" id="BlogID"
-							rows="25"></textarea>
-						<button type="button" onclick="saveBlog()" class="btn btn-lg btn-primary btn-block">Save
-							Blog</button>
+						<h2 class="card-title mb-4">Edit Home Grid <span class="text-muted">(json)</span></h2>
+						<textarea class="form-control bg-black-transparent text-light mb-3" id="HomeID"
+							rows="40"></textarea>
+						<button type="button" onclick="saveHome()" class="btn btn-lg btn-primary btn-block">Save
+							Grid</button>
 					</div>
 				</div>
 			</div>
@@ -86,7 +73,6 @@
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script type="text/javascript" src="http://cdn.bootstrap-plugins.de/v1.1/bootstrap-plugins.min.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
