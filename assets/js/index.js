@@ -299,3 +299,10 @@ try {
 		window.location.href = base.join("/") + "/index.html";
 	}
 } catch (e) { }
+
+
+try {
+	if (navigator.userAgent === "iOS") {
+		document.getElementsByTagName("nav")[0].remove();
+	}
+} catch (e) { }
