@@ -104,7 +104,7 @@ try {
 
 try {
 	if (window.location.href.includes("/index.html")) {
-		["xs", "s", "m", "l", "xl", "xxl", "xxxl"].forEach(function (breakpoint, index) {
+		["xs", "s", "m", "l", "xl"].forEach(function (breakpoint, index) {
 			firebase.database().ref('index/' + breakpoint).on('value', function (snapshot) {
 				try {
 					document.getElementById("IndexID-" + breakpoint).innerHTML = "";
