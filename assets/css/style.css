@@ -1,11 +1,11 @@
 * {
-	-webkit-touch-callout: none;
 	-webkit-text-size-adjust: none;
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	-webkit-user-select: none;
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 }
+
 html {
 	overflow: scroll;
 	overflow-x: hidden;
@@ -42,6 +42,11 @@ body {
 	background-color: #242424 !important;
 	border: 0;
 }
+.bg-nav {
+	background-image: linear-gradient(#242424, #242424f0) !important;
+	background-color: transparent !important;
+	border: 0;
+}
 .bg-black-transparent {
 	background-color: #242424f0 !important;
 	border: 0;
@@ -58,6 +63,11 @@ body {
 	flex: 1;
 	padding: 26px 26px 26px 26px;
 }
+@media (max-width: 576px) {
+	.container-fluid, .container {
+		padding: 0px !important;
+	}	
+}
 .copyright {
 	float: right;
 }
@@ -70,9 +80,14 @@ body {
 .mb-26 {
 	margin-bottom: 26px;
 }
-.col, .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col10, .col-11, .col-12 {
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
 	margin: 0px;
-	padding: 5px;
+	padding: 8px;
+}
+@media (max-width: 576px) {
+	.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+		padding: 8px !important;
+	}
 }
 .card {
 	border-radius: 8px;
