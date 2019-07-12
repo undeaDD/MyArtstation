@@ -3,7 +3,7 @@
     "short_name": "Valo's Art",
     "lang": "de-DE",
     "start_url": "https://undeadd.github.io/MyArtstation/index.html",
-    "scope": "/MyArtstation/",
+    "scope": "https://undeadd.github.io/MyArtstation/",
     "display": "fullscreen",
     "orientation": "portrait",
     "icons": [

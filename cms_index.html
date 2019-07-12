@@ -72,13 +72,34 @@
 
 	<div class="container text-light">
 		<div class="row">
-			<div class=" col">
+			<div class="col-12 mb-4">
+				<div class="btn-group btn-group-toggle btn-block" data-toggle="buttons">
+					<label class="btn btn-secondary">
+						<input type="radio" name="options" id="xs"> XS
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="options" id="s"> S
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="options" id="m"> M
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="options" id="l"> L
+					</label>
+					<label class="btn btn-secondary">
+						<input type="radio" name="options" id="xl"> XL
+					</label>
+				</div>
+			</div>
+			<div class="col-12">
 				<div class="card bg-dark">
 					<div class="card-body">
-						<h2 class="card-title mb-4">Edit Home Grid <span class="text-muted">(json)</span></h2>
+						<h2 class="card-title mb-4">Edit Home Grid <span class="text-muted" id="subtitle">(json)</span>
+						</h2>
 						<textarea class="form-control bg-black-transparent text-light mb-3" id="HomeID"
 							rows="40"></textarea>
-						<button type="button" onclick="saveHome()" class="btn btn-lg btn-primary btn-block">Save
+						<button type="button" id="saveButton" onclick="saveHome()"
+							class="btn btn-lg btn-primary btn-block">Save
 							Grid</button>
 					</div>
 				</div>

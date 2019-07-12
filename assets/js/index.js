@@ -74,22 +74,52 @@ try {
 	};
 } catch (e) { }
 
+function saveHome() {
+	try {
+		if (window.location.href.includes("/cms_index.html")) {
+			if (current !== "") {
+				firebase.database().ref('index/' + current).set(document.getElementById('HomeID').value);
+			}
+		}
+	} catch (e) { }
+}
+
+try {
+	if (window.location.href.includes("/cms_index.html")) {
+
+		var ref;
+		var current = "";
+		$(".btn-group > .btn").on("click", function (e) {
+			try { ref.off('value'); } catch (e) { }
+			current = e.currentTarget.children[0].id;
+			ref = firebase.database().ref('index/' + current);
+			ref.on('value', function (snapshot) {
+				document.getElementById("subtitle").innerHTML = current.toUpperCase() + " (json)";
+				document.getElementById('HomeID').value = snapshot.val();
+				document.getElementById("saveButton").innerText = "Save Grid - " + current;
+			});
+		});
+	}
+} catch (e) { }
+
 try {
 	if (window.location.href.includes("/index.html")) {
-		firebase.database().ref('index').on('value', function (snapshot) {
-			try {
-				document.getElementById("IndexID").innerHTML = "";
-			} catch (e) { }
+		["xs", "s", "m", "l", "xl"].forEach(function (breakpoint, index) {
+			firebase.database().ref('index/' + breakpoint).on('value', function (snapshot) {
+				try {
+					document.getElementById("IndexID-" + breakpoint).innerHTML = "";
+				} catch (e) { }
 
-			for (const [index, item] of JSON.parse(snapshot.val()).entries()) {
-				document.getElementById('IndexID').innerHTML += `
-				<div class="` + item["style"] + `" style="height: 50vh;">
-					<a href="project.html?id=` + index + `">
-						<div class="project shadow-lg" style="background-image: url('assets/img/projects/` + item["image"] + `');"></div>
-					</a>
-				</div>
-				`;
-			}
+				for (const item of JSON.parse(snapshot.val())) {
+					document.getElementById('IndexID-' + breakpoint).innerHTML += `
+					<div class="col-` + item["col"] + `" style="height: ` + item["height"] + `;">
+						<a href="project.html?id=` + item["id"] + `">
+							<div class="project shadow-lg" style="background-image: url('assets/img/projects/` + item["id"] + `.png');"></div>
+						</a>
+					</div>
+					`;
+				}
+			});
 		});
 
 		if (new URL(window.location.href).searchParams.get("sendMessage") !== null) {
@@ -98,7 +128,7 @@ try {
 			});
 		}
 	}
-} catch (e) { }
+} catch (e) { console.log(e); }
 
 try {
 	if (window.location.href.includes("/contact.html")) {
@@ -118,22 +148,6 @@ try {
 				document.getElementById("contactEnabled").classList.add("btn-danger");
 				$('#contactEnabled').prop('disabled', true);
 			}
-		});
-	}
-} catch (e) { }
-
-function saveHome() {
-	try {
-		if (window.location.href.includes("/cms_index.html")) {
-			firebase.database().ref('index').set(document.getElementById('HomeID').value);
-		}
-	} catch (e) { }
-}
-
-try {
-	if (window.location.href.includes("/cms_index.html")) {
-		firebase.database().ref('index').on('value', function (snapshot) {
-			document.getElementById('HomeID').value = snapshot.val();
 		});
 	}
 } catch (e) { }
