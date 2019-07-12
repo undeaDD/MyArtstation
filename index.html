@@ -64,7 +64,7 @@
 		</div>
 	</nav>
 
-	<div class="container-fluid text-light">
+	<div class="container-fluid text-light" id="indexContainer">
 
 		<div class="alert alert-light bg-dark text-light" style="display: none; border-radius: 8px;" id="sendMessage"
 			role="alert">
@@ -76,7 +76,9 @@
 		<div class="row d-none d-sm-flex d-md-none" id="IndexID-s"></div>
 		<div class="row d-none d-md-flex d-lg-none" id="IndexID-m"></div>
 		<div class="row d-none d-lg-flex d-xl-none" id="IndexID-l"></div>
-		<div class="row d-none d-xl-flex" id="IndexID-xl"></div>
+		<div class="row d-none d-xl-flex d-xxl-none" id="IndexID-xl"></div>
+		<div class="row d-none d-xxl-flex d-xxxl-none" id="IndexID-xxl"></div>
+		<div class="row d-none d-xxxl-flex" id="IndexID-xxxl"></div>
 	</div>
 
 	<footer class="page-footer font-small bg-black text-light justify-content-between d-none d-sm-flex" id="footer">
@@ -96,10 +98,20 @@
 	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="assets/js/index.js"></script>
+
+	<script>
+		$(window).on('resize', function () {
+			if ($(window).width() > 1900) {
+				document.getElementById("indexContainer").className = "container text-light";
+			} else {
+				document.getElementById("indexContainer").className = "container-fluid text-light";
+			}
+		});
+	</script>
 
 	<noscript>
 		<meta http-equiv="refresh" content="0.0;url=/nojs.html" />

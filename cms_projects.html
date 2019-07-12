@@ -36,103 +36,51 @@
 	<link href="assets/css/style.css" rel="stylesheet">
 	<link rel="apple-touch-icon" type="image/png" href="assets/img/appIcon.png">
 	<link rel="icon" type="image/png" href="assets/img/logo.png">
-	<title>Valo's Art - Project</title>
+	<title>Valo's CMS - Projects</title>
 </head>
 
 <body class="bg-black">
 
-	<nav class="navbar navbar-expand sticky-top navbar-dark bg-black-transparent shadow-lg">
+	<nav class="navbar navbar-expand sticky-top navbar-dark shadow-lg bg-primary">
 		<a class="navbar-brand d-none d-sm-block">
-			<img src="assets/img/logo.png" width="30" height="30">
+			<img id="userAvatar" class="rounded-circle" src="assets/img/user.png" width="30" height="30">
 		</a>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" href="index.html">Go Back</a>
+					<a class="nav-link" href="cms_index.html">Home</a>
+				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="#">Projects</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="cms_faq.html">FAQ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="cms_blog.html">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="cms_contact.html">Contact</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li class="nav-item">
+					<a class="nav-link" href="index.html"><i class="fas fa-lg fa-fw fa-eye"></i></a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#" onclick="logout()"><i class="fas fa-lg fa-fw fa-door-open"></i></a>
 				</li>
 			</ul>
 		</div>
 	</nav>
 
 	<div class="container text-light">
-		<div class="row">
-			<div class="col-md-12 col-lg-8 order-2 order-md-2 order-lg-1" id="blogWrapper">
-				<div class="card mb-4 bg-dark shadow">
-					<div class="card-img-top project"
-						style="border-radius: 8px 0px 8px 0px !important; background-image: url('assets/img/projects/0.png'); height: 200px;">
-					</div>
-					<div class="card-body">
-						<h2 class="card-title mb-4">title</h2>
-						<p class="card-text">body</p>
-					</div>
-					<div class="card-footer bg-black-transparent text-muted">
-						footer
-						<div class="float-right">
-							tags
-						</div>
-					</div>
-				</div>
 
-				<div class="card mb-4 bg-dark shadow">
-					<div class="card-img-top project"
-						style="border-radius: 8px 0px 8px 0px !important; background-image: url('assets/img/projects/0.png'); height: 300px;">
-					</div>
-					<div class="card-footer bg-black-transparent text-muted">
-						footer
-						<div class="float-right">
-							tags
-						</div>
-					</div>
-				</div>
-
-
-				<div class="card mb-4 bg-dark shadow">
-					<div class="card-body">
-						<h2 class="card-title mb-4">title</h2>
-						<p class="card-text">body</p>
-					</div>
-					<div class="card-footer bg-black-transparent text-muted">
-						footer
-						<div class="float-right">
-							tags
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-			<div class="col-md-12 col-lg-4 order-1 order-md-1 order-lg-2" id="TwitterBlogURL">
-				<div class="card mb-4 bg-dark shadow">
-					<div class="card-body">
-						<h2 class="card-title mb-4">Informations</h2>
-						<p class="card-text">body</p>
-					</div>
-				</div>
-			</div>
-
-		</div>
 	</div>
-
-
-	<footer class="page-footer font-small bg-black text-light justify-content-between d-none d-sm-flex" id="footer">
-		<div class="btn-group" role="group">
-			<a href="https://twitter.com/ValoArt" class="btn ml-2 text-light">
-				<i class="fab fa-lg fa-twitter"></i>
-			</a>
-			<a href="https://t.me/joinchat/AAAAAENCmSyD5tfnoC3E-w" class="btn ml-2 text-light">
-				<i class="fab fa-lg fa-telegram-plane"></i>
-			</a>
-			<a href="privacy.html" class="btn ml-2 text-light">Privacy Policy</a>
-		</div>
-		<div class="copyright py-3 mr-5">
-			© 2019 Copyright - Valo's Art
-			<a href="cms_admin.html" class="btn ml-2 text-light"><i class="fas fa-lg fa-sign-in-alt"></i></a>
-		</div>
-	</footer>
 
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-auth.js"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<script src="assets/js/index.js"></script>
 

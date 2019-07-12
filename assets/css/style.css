@@ -219,3 +219,18 @@ select:not(:checked) {
 	color: white;
 	background-color: #f47b00;
 }
+@media (min-width: 1500px) {
+	.container {
+		max-width: 1440px !important;
+	}
+}
+@media (min-width: 1700px) {
+	.container {
+		max-width: 1640px !important;
+	}
+}
+@media (min-width: 1900px) {
+	.container {
+		max-width: 1840px !important;
+	}
+}
