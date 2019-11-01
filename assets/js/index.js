@@ -131,6 +131,34 @@ try {
 } catch (e) { console.log(e); }
 
 try {
+	if (window.location.href.includes("/photos.html")) {
+		["xs", "s", "m", "l", "xl"].forEach(function (breakpoint, index) {
+			firebase.database().ref('index/' + breakpoint).on('value', function (snapshot) {
+				try {
+					document.getElementById("IndexID-" + breakpoint).innerHTML = "";
+				} catch (e) { }
+
+				for (const item of JSON.parse(snapshot.val())) {
+					document.getElementById('IndexID-' + breakpoint).innerHTML += `
+					<div class="col-` + item["col"] + `" style="height: ` + item["height"] + `;">
+						<a href="project.html?id=` + item["id"] + `">
+							<div class="project shadow-lg" style="background-image: url('assets/img/projects/` + item["id"] + `.png');"></div>
+						</a>
+					</div>
+					`;
+				}
+			});
+		});
+
+		if (new URL(window.location.href).searchParams.get("sendMessage") !== null) {
+			$("#sendMessage").hide().delay(1000).fadeIn(200).delay(3500).fadeOut(1000, function () {
+				window.history.replaceState(null, null, window.location.pathname);
+			});
+		}
+	}
+} catch (e) { console.log(e); }
+
+try {
 	if (window.location.href.includes("/contact.html")) {
 		firebase.database().ref('info').on('value', function (snapshot) {
 			document.getElementById("FB-Info").innerHTML = "<h2 class=\"card-title mb-4\">Informations</h2>" + snapshot.val();
@@ -311,12 +339,5 @@ try {
 		var base = window.location.href.split('/');
 		base.pop();
 		window.location.href = base.join("/") + "/index.html";
-	}
-} catch (e) { }
-
-
-try {
-	if (navigator.userAgent === "iOS") {
-		document.getElementsByTagName("nav")[0].remove();
 	}
 } catch (e) { }
