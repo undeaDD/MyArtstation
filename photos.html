@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="Expires" content="0">
+	<meta name="twitter:dnt" content="on">
+	<meta name="HandheldFriendly" content="true">
+	<meta name="MobileOptimized" content="width">
+	<meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="x-dns-prefetch-control" content="off">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, user-scalable=no">
+	<meta name="google-site-verification" content="1dVwp1d6F-PBKpvrG-E3EARf_myu95mFe0UReRUFXb4" />
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="apple-mobile-web-app-title" content="Valo's Art">
+	<meta name="application-name" content="Valo's Art">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="undeaD_D">
+	<meta name="robots" content="index,nofollow">
+	<meta name="keywords" content="Privat, Bilder, Gallerie, undeaD_D">
+	<meta name="description" content="Private Portfolio Gallerie">
+	<meta name="date" content="2019-06-05T20:37:45+0200">
+	<meta name="google" content="nositelinkssearchbox">
+	<meta name="google" content="notranslate">
+	<meta name="referrer" content="no-referrer">
+	<meta name="rating" content="General">
+
+	<link rel="manifest" href="manifest.json">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link rel="apple-touch-icon" type="image/png" href="assets/img/appIcon.png">
+	<link rel="icon" type="image/png" href="assets/img/logo.png">
+	<title>Valo's Art - Photos</title>
+</head>
+
+<body class="bg-black">
+
+	<nav class="navbar navbar-expand sticky-top navbar-dark bg-nav shadow-lg">
+		<a class="navbar-brand d-none d-sm-block">
+			<img src="assets/img/logo.png" width="30" height="30">
+		</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" href="index.html">Valo's Art</a>
+				</li>
+        <li class="nav-item active">
+					<a class="nav-link" href="#">Photos</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="faq.html">FAQ</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="blog.html">Blog</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="contact.html">Contact</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container-fluid text-light" id="indexContainer">
+
+		<div class="alert alert-light bg-dark text-light" style="display: none; border-radius: 8px;" id="sendMessage"
+			role="alert">
+			<i class="fas fa-lg fa-check mr-2 my-2"></i>
+			Your message was sent successfully.
+		</div>
+
+		<div class="row d-flex d-sm-none" id="IndexID-xs"></div>
+		<div class="row d-none d-sm-flex d-md-none" id="IndexID-s"></div>
+		<div class="row d-none d-md-flex d-lg-none" id="IndexID-m"></div>
+		<div class="row d-none d-lg-flex d-xl-none" id="IndexID-l"></div>
+		<div class="row d-none d-xl-flex" id="IndexID-xl"></div>
+	</div>
+
+	<footer class="page-footer font-small bg-black text-light justify-content-between d-none d-sm-flex" id="footer">
+		<div class="btn-group" role="group">
+			<a href="https://twitter.com/ValoArt" class="btn ml-2 text-light">
+				<i class="fab fa-lg fa-twitter"></i>
+			</a>
+			<a href="https://t.me/joinchat/AAAAAENCmSyD5tfnoC3E-w" class="btn ml-2 text-light">
+				<i class="fab fa-lg fa-telegram-plane"></i>
+			</a>
+			<a href="privacy.html" class="btn ml-2 text-light">Privacy Policy</a>
+		</div>
+		<div class="copyright py-3 mr-5">
+			© 2019 Copyright - Valo's Art
+			<a href="cms_admin.html" class="btn ml-2 text-light"><i class="fas fa-lg fa-sign-in-alt"></i></a>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-database.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<script src="assets/js/index.js"></script>
+
+	<script>
+		$(window).on('resize', function () {
+			if ($(window).width() > 1900) {
+				document.getElementById("indexContainer").className = "container text-light";
+			} else {
+				document.getElementById("indexContainer").className = "container-fluid text-light";
+			}
+		});
+	</script>
+
+	<noscript>
+		<meta http-equiv="refresh" content="0.0;url=/nojs.html" />
+	</noscript>
+</body>
+
+</html>
